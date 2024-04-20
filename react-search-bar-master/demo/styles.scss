@@ -1,0 +1,117 @@
+$background-color: #fafafa;
+$border-color: #ddd;
+$border-color-active: #ccc;
+$border-radius: 5px;
+$font-size: 16px;
+$font-family: "LucidaSansTypewriter", Menlo, monospace;
+$item-highlight-color: #eee;
+$padding: 14px;
+
+@font-face {
+  src: url("font.ttf") format("truetype");
+  font-family: "LucidaSansTypewriter";
+  font-style: normal;
+  font-weight: normal;
+}
+
+body {
+  background-color: $background-color;
+  font: $font-size $font-family;
+  margin: 50px auto;
+}
+
+input {
+  font: $font-size $font-family;
+  outline: 0;
+}
+
+.container {
+  margin: 0 auto;
+  width: 450px;
+}
+
+.input {
+  border: none;
+  border-radius: $border-radius;
+  margin: 0;
+  padding: $padding;
+  padding-right: 0;
+  width: 100%;
+}
+
+.input-container {
+  display: flex;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.input-container.field--focused,
+.input-container.has-items {
+  border-color: $border-color-active;
+}
+
+.input-container.has-items {
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.clear-button {
+  background-color: white;
+  background-image: url(./icons/clear.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 30%;
+  border: 0;
+  border-radius: $border-radius;
+  cursor: pointer;
+  font-size: 0;
+  outline: 0;
+  padding: 0;
+  width: 45px;
+}
+
+.items {
+  background-color: #fff;
+  border: 1px solid $border-color-active;
+  border-bottom-right-radius: $border-radius;
+  border-bottom-left-radius: $border-radius;
+  list-style: none;
+  margin: 0;
+  overflow: auto;
+  padding: 0;
+  position: relative;
+  top: -1px;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.item {
+  align-items: center;
+  box-sizing: content-box;
+  cursor: pointer;
+  display: flex;
+  padding: $padding;
+}
+
+.item--focused,
+.item:active {
+  background: $item-highlight-color;
+}
+
+.item:last-child {
+  border: none;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    margin: 25px;
+  }
+
+  .container {
+    width: auto;
+  }
+}
